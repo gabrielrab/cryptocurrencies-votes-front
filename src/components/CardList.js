@@ -6,8 +6,13 @@ export default function CardList({ list }) {
     <section className="card-list">
       {list
         .sort((a, b) => (a.votes > b.votes ? -1 : 1))
-        .map((record) => (
-          <Card code={record.code} name={record.name} votes={record.votes} />
+        .map((record, index) => (
+          <Card
+            code={record.code}
+            name={record.name}
+            votes={record.votes}
+            key={index}
+          />
         ))}
     </section>
   );
